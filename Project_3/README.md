@@ -1,4 +1,5 @@
 # Problem Statement
+[Thai Version]
 ย้อนกลับไปในช่วงของ โควิด-19 พฤติกรรมของผู้คนถูกปรับเปลี่ยน ถูกควบคุมและจำกัดการเดินทาง และกิจกรรม
 แต่เมื่อเหตุการ์ณคลีคลายลงเราจะพบว่า มีหลายๆกิจกรรม หลายๆ Event เกิดขึ้นมากมาย และมาพร้อมกับการออกเดินทางของผู้คนอีกครั้งหนึ่ง
 
@@ -9,9 +10,15 @@
   2. เป็นที่พูดในถึงใน www.reddit.com ช่วงเวลาตั้งแต่หลังโควิด - 19
   3. ไม่ซ้ำซ้อนกับกิจกรรมที่ได้รับความนิยมอยู่แล้วในปัจจุบัน (Red Ocean)
 
-จากเงื่อนไขในด้านบน community ที่ถูกเลือกมาคือ Community: running, Community: Camping & Hiking
+จากเงื่อนไขในด้านบน community ที่ถูกเลือกมาคือ
+- Community: running
+- Community: Camping & Hiking
 
-![](img/reddit_top_commu.png)
+[English Version]
+
+TBW
+
+![](loading="lazy" width="30px" img/reddit_top_commu.png)
 
 # Datasets
 
