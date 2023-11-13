@@ -1,5 +1,6 @@
 # Problem Statement
 [Thai Version]
+
 ย้อนกลับไปในช่วงของ โควิด-19 พฤติกรรมของผู้คนถูกปรับเปลี่ยน ถูกควบคุมและจำกัดการเดินทาง และกิจกรรม
 แต่เมื่อเหตุการ์ณคลีคลายลงเราจะพบว่า มีหลายๆกิจกรรม หลายๆ Event เกิดขึ้นมากมาย และมาพร้อมกับการออกเดินทางของผู้คนอีกครั้งหนึ่ง
 
@@ -18,7 +19,7 @@
 
 TBW
 
-![](loading="lazy" width="30px" img/reddit_top_commu.png)
+![](img/reddit_top_commu.png)
 
 # Datasets
 
@@ -29,3 +30,11 @@ Scraping data from the top 2000 posts from the two subreddits:
 to train models.
 
 # Data Cleaning
+
+[Thai Version]
+
+หลังจาก scrape ข้อมูล และรวมข้อมูลเป็นชุดเดียวกันแล้วจะเข้าสู่กระบวนการ cleaning เนื่องจากข้อมูลที่ได้มาจะมีบ้าง Titel,Comment ที่ถูกลบไปแล้ว เราจะทำการนำข้อมูลส่วนนี้ออก หลังจากนั้นจะมาเข้ากระบวนการกำจัดคำที่เป็นตัวรบกวนเช่น punctuations, delimiters, and stopwords, then lemmatized.
+
+เมื่อได้ชุดข้อมูลที่มีความสมบูรณ์แล้วจึงมาทำการหา 20 Unigram และ 20 Bigram เพื่อดูคำที่มีการใช้งานบ่่อยๆ และมีเพี่ยงพอต่อการนำมาเข้า models
+
+![](img/uni_bi_gram.png)
