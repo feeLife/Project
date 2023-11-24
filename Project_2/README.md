@@ -1,2 +1,4 @@
 # Project_2
-Project 2 - Predict Resident price from Sample data
+# Problem Statement
+
+Predict what will effect the price of the property
