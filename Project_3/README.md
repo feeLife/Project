@@ -1,40 +1,56 @@
 # Problem Statement
-[Thai Version]
 
-ย้อนกลับไปในช่วงของ โควิด-19 พฤติกรรมของผู้คนถูกปรับเปลี่ยน ถูกควบคุมและจำกัดการเดินทาง และกิจกรรม
-แต่เมื่อเหตุการ์ณคลีคลายลงเราจะพบว่า มีหลายๆกิจกรรม หลายๆ Event เกิดขึ้นมากมาย และมาพร้อมกับการออกเดินทางของผู้คนอีกครั้งหนึ่ง
+M Corporation after Project 2 ends towards the customer. The old wants to help analyze the behavior of customers. Especially what customers are interested in this period By going back to the period of Covid-19 where people's behavior is modified Controlled and limited travel And many activities are canceled.
 
-นั้นจึงเป็นคำถามหลักของการค้นคว้านี้ อะไรคือกิจกรรมนอกสถานที่ที่มีการพูดถึงมากที่สุด เพื่อน่ำข้อมูลเหล่านั้นมาวิเคราะห์ และสร้างสินค้า, สร้างสื่อ และสร้างการรู้จักตัวสินค้าของเราผ่านกิจกรรมเหล่านั้น
+To find out What is the "Outdoor activity" that is the most talked about? The purpose of the customer is to bring the analyzed data to the market plan. Event plan To be consistent with the current interest
 
-เงื่อนไขในการค้นหว้า
-  1. เป็นกิจกรรมนอกสถานที่ ที่สามารถจัดขึ้นได้บ่อยๆ หรือออกไปทำกิจกรรมได้ทุกวัปดาห์
-  2. เป็นที่พูดในถึงใน www.reddit.com ช่วงเวลาตั้งแต่หลังโควิด - 19
-  3. ไม่ซ้ำซ้อนกับกิจกรรมที่ได้รับความนิยมอยู่แล้วในปัจจุบัน (Red Ocean)
+Conditions provided by the customer
+1. Is an outdoor activity That can be held often Or go out to do activities every day
+2. It is said in the www.reddit.com period since post-Covid-19
+3. It is not redundant with activities that are already popular today.
 
-จากเงื่อนไขในด้านบน community ที่ถูกเลือกมาคือ
-- Community: running
-- Community: Camping & Hiking
+Of the conditions above, the selected community is
+- Community: running.
+- Community: Camping & Hiking.
 
-[English Version]
-
-TBW
+The information that will be pulled from the website will be scoped from the post-Covid period onwards, that is, from 2022 to the present.
 
 ![](img/reddit_top_commu.png)
 
 # Datasets
 
-Scraping data from the top 2000 posts from the two subreddits:
+Scraping data from the two subreddits:
 1. [r/running](https://www.reddit.com/r/running/)
 2. [r/Camping&Hiking](https://www.reddit.com/r/Camping&Hiking/)
 
 to train models.
 
-# Data Cleaning
+# EDA
 
-[Thai Version]
+After scraping the data and combining the same data, it will enter the cleaning process. Because the information obtained will have some title, Comment that has been deleted We will remove this information. After that, it will enter the process of eliminating words that are disturbing such as punctuations, delimiters, and stopwords, then lemmatized.
 
-หลังจาก scrape ข้อมูล และรวมข้อมูลเป็นชุดเดียวกันแล้วจะเข้าสู่กระบวนการ cleaning เนื่องจากข้อมูลที่ได้มาจะมีบ้าง Titel,Comment ที่ถูกลบไปแล้ว เราจะทำการนำข้อมูลส่วนนี้ออก หลังจากนั้นจะมาเข้ากระบวนการกำจัดคำที่เป็นตัวรบกวนเช่น punctuations, delimiters, and stopwords, then lemmatized.
-
-เมื่อได้ชุดข้อมูลที่มีความสมบูรณ์แล้วจึงมาทำการหา 20 Unigram และ 20 Bigram เพื่อดูคำที่มีการใช้งานบ่่อยๆ และมีเพี่ยงพอต่อการนำมาเข้า models
+From the complete information, find 20 Unigram and 20 Bigram to see the words that are often used. And have enough to bring into models
 
 ![](img/uni_bi_gram.png)
+
+# Modeling
+
+1. Logistic Regression
+2. KNN Classification
+3. Random Forest
+4. SVM
+
+| Modeling | Vectorize | Accuracy | F1 Score |
+|----------|-----------|----------|----------|
+| Logistic Regression | CountVectorize | 0.996 | 0.975 |
+| Logistic Regression | TF-IDF | 0.998 | 0.977 |
+| KNN Classification | CountVectorize | 0.906 | 0.833 |
+| KNN Classification | TF-IDF | 0.947 | 0.893 |
+| Random Forest | CountVectorize | 0.996 | 0.979 |
+| Random Forest | TF-IDF | 0.996 | 0.983 |
+
+
+From the results of the model mentioned by relying on the accuracy (Accuracy) Model that will be imported to predict is
+Random Forest.
+
+This, even if viewed from other models, will find that the accuracy score is similar. But in predicting the accuracy of talking about the model that gives the highest score, it will reduce the risk of errors.
