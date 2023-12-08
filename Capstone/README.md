@@ -9,16 +9,23 @@
 
 
 - Problem Statement
-  * The partner's grade arrangement is a manual operation and relies on data. Do not pay the bill for 1 month because the data is large. And is working on Microsoft Excel
-  * The current Commission process cannot be used to determine Tie Commission because it is a manual process. Lack of reliability
-  * Evaluation of efficiency and quality of Partner slowness * The company loses revenue from customers that is not quality.
+  * The partner's grade arrangement is a manual operation and relies on data. Do not pay the bill for 1 month because the data is large. And is working on Microsoft Excel.
+  * The current Commission process cannot be used to determine Tie Commission because it is a manual process. Lack of reliability.
+  * Evaluation of efficiency and quality of Partner slowness.
+  * The company loses revenue from customers that is not quality.
 
 - Business Benefit:
   * Help the agency that takes care of the partner can solve the problem in the partner in the problem group.
-  * Helps reduce excessive returns. Or pay not consistent with the quality of the customer that can be found
+  * Helps company reduce excessive expense.
+  * Limited some offer that partner get example reduce giving discount offer to customer, limited quantity of products has allocate to partner
+
+> Cost : expense per partner = 15,000 ฿
+
+>Gain/Loss price = 600฿ * 4 mth = 2,400 ฿ per subs
 
 - Limitation:
   * Large scale of data 12 month period of sales and billing.
+  * data churn an unavailable.
 
 - The process of making a project
   * backgroup & problem statement
@@ -26,4 +33,4 @@
   * eda
   * model
     - classification : to create partner grade/group
-    - ARIMA : for predict sales performance (addon)
+    - ARIMA : for predict sales performance (Addon)
