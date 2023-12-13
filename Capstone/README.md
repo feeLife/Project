@@ -33,3 +33,14 @@
   * model
     - classification : to create partner grade/group
     - ARIMA : for predict sales performance (Addon)
+
+
+- Data Dict
+
+| field | description | Type |
+|-------|-------------|------|
+| partner_code | staff code all sales channel | string |
+| sales_date | date of subscriber start | datetime |
+| total | number of new subscriber | int |
+| revenue | total of revenue | int |
+| churn | total of subscriber leave | int |
