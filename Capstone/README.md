@@ -1,46 +1,60 @@
 # Statement
 
-- Backgroud
-  * Partner is an important part to reach customers. Help distribute products to the area well. And help reduce investment in setting up a store. The partner who comes as a partnership will receive a profit in many forms, such as operating fees, commission or extra reward when hit the target, with such benefits, there are some partners focus on selling out in large quantities. But low quality of customers for example customer not pay for the invoice, Customers who only use freebies, when they run out, come back to buy again.This type of customer causes the company to lose income.
+* Backgroud *
+Partner : Personal selling is a face-to-face selling technique by which a salesperson uses his or her interpersonal skills to persuade a customer in buying a particular product. The salesperson tries to highlight various features of the product to convince the customer that it will only add value. However, getting a customer to buy a product is not the motive behind personal selling every time. Often companies try to follow this approach with customers to make them aware of a new product.
 
-  * Partner grading s therefore a part that allows to help team to monitor and troubleshoot problem in a time.
+Partner sales target : End Customer, SME (Small and medium-sized enterprises)
 
-
-- Problem Statement
-  * The partner's grade arrangement is a manual operation and relies on data. Now they use unpaid bill in 1 month previous . And is working on Microsoft Excel.
-  * The current Commission process cannot be used to determine Commission tier because it is a manual process. Lack of reliability.
-  * Evaluation of efficiency and quality of Partner slowness.
-  * The company loses revenue from customers that is not quality.
-
-- Business Benefit:
-  * Help the team can solve or judge partner that has a risk.
-  * Helps company reduce excessive expense.
-  * Limited some offer that partner get example reduce giving discount offer to customer, limited quantity of products has allocate to partner
-
-> Cost : expense per partner = 15,000 ฿
-
->Gain/Loss price = 600฿ * 4 mth = 2,400 ฿ per subs
-
-- Limitation:
-  * data churn has a lot of zero value (it's good), make quantile mistake
-
-- The process of making a project
-  * backgroup & problem statement
-  * query data
-  * eda
-  * RMF by using value of recency, sales, churn (for basic)
-    - but from limitation, will add gridsearch cv to find the best quantile for RFM
-  * model
-    - classification : to create partner grade/group
-    - ARIMA : for predict sales performance (Addon)
+Partner Benefit : Salary, Commission
 
 
-- Data Dict
+* Problem Statement *
 
-| field | description | Type |
-|-------|-------------|------|
-| partner_code | staff code all sales channel | string |
-| sales_date | date of subscriber start | datetime |
-| total | number of new subscriber | int |
-| revenue | total of revenue | int |
-| churn | total of subscriber leave | int |
+- The XYZ Company is a communications satellite service company with thousands of regional sales teams. Each month, partner leave the area to sell products to customers at various locations at all times
+
+- Because there are thousands of active partner “Effective” cluster of partner and not effective based on measurement when achieving target. Therefore may not be enough 
+
+- Company wants to find a way to divide the cluster of partners. For purpose maintain good partners and focus on  ineffective partner.
+
+* Data availability * 
+
+- Partner Information
+- Information successful sales rate per partner 
+- Sales revenue (Based on the price of the package) that has not yet been issued a bill
+- Information for cancellation of services that comes from the partner’s offering
+
+* Data not availability *
+
+- Customer LifeTime / Customer Value
+- Partner complaint
+
+* Limitation *
+- Data compensation and salary
+- Cost per partner condition is not clear (hidden cost)
+
+
+* The process of making a project *
+
+1. Understand problem
+2. Initial EDA
+3. Feature Engineering: create subset of data 
+4. Second EDA
+5. Modeling
+  - K Mean
+  - Agglomerative Clustering
+  - DBSCAN
+
+* Result *
+From the resulting ratt It is not possible to conclude what the salesperson with the coefficient is, or which one. Which the analysis process still needs to be developed.
+
+But from the initial results Makes us discover that employees have an average sales density of 1 to 500 subs,And considering deep down, we will see the density of partner and cluster clearly.Which lead to the action plan
+
+* Recommendation and Action Plan * 
+
+- Recommend.
+From the density in previous slide.
+The team has divided the sales range into 4 parts, each of which consists of a cluster of partner in different levels, That make company easy to focus.
+
+- Action Plan.
+Partner cluster 1: Has a small sales volume but products are high price. Companies should push this group to increase sales rate.
+Partner Cluster 0: Has a large sales volume but low price and is a large group. Companies could help to find a package or improve the this group to sold high value
